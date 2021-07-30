@@ -1,0 +1,557 @@
+// 
+// Theme Name: New Clean Template
+// Version: 3.6
+// Tags: clean, development, html5, sass, jquery, slick.js
+// Description: Clean wordpress theme with slick and visible js function
+// Author: DHL
+// Author URI: telegram @dhljob
+//
+
+:root
+    --container: 1200px
+    --text: #1a1a1a
+    --size: 14px
+    --main: #d4a331
+    --main__bg: #010101
+    --main__blend: #f0e6c9
+    --main__dark: #755d26
+    --stroke: #e3e3e3
+    --gray: #817F7F
+    --gray__light: #f8f8f8
+    --yellow: #FCD60D
+    --yellow__blend: #FCD60D80
+    --yellow__dark: #CAAC0E
+    --blue__blend: #548cde80
+    --brown: #CAAC0E
+    --orange: #F4C82D
+    --green: #AFD55E
+
+// @font-face
+//     font-family: 'Stag Sans'
+//     src: url("../fonts/StagSans-Regular.woff2") format("woff2")
+//     font-weight: normal
+
+// @font-face
+//     font-family: 'Stag Sans'
+//     src: url("../fonts/StagSans-Light.woff2") format("woff2")
+//     font-weight: 300
+
+// @font-face
+//     font-family: 'Stag Sans'
+//     src: url("../fonts/StagSans-SemiBold.woff2") format("woff2")
+//     font-weight: 600
+
+// @font-face
+//     font-family: 'Stag Sans'
+//     src: url("../fonts/StagSans-Bold.woff2") format("woff2")
+//     font-weight: 700
+
+html
+    scroll-behavior: smooth
+body
+    font-family: 'Open Sans', sans-serif
+    font-size: var(--size)
+    color: var(--text)
+    background: var(--main__bg)
+    padding: 0
+    margin: 0
+    &.unscroll
+        overflow: hidden
+        padding: 0 15px 0 0
+
+a
+    color: inherit
+    text-decoration: none
+*
+    box-sizing: border-box
+input:focus
+    outline: none
+button:focus
+    outline: none
+textarea:focus
+    outline: none
+
+.row
+    display: flex
+    margin: 0 -10px
+.d-flex
+    display: flex
+.flex-wrap
+    flex-wrap: wrap
+.flex-col
+    flex-direction: column
+.left, .right
+    width: 50%
+    padding: 0 10px
+.col-20
+    width: 20%
+.col-30
+    width: 30%
+.col-33
+    width: 33.33%
+.col-35
+    width: 35%
+.col-40
+    width: 40%
+.col-50
+    width: 50%
+.col-60
+    width: 60%
+.col-65
+    width: 65%
+.col-70
+    width: 70%
+.col-75
+    width: 75%
+.col-grow
+    flex-grow: 1
+[class^=col]
+    padding: 0 10px
+
+.ml-auto
+    margin-left: auto
+.mb-4
+    padding-bottom: 4rem
+
+.aic
+    align-items: center
+.jcc
+    justify-content: center
+.jcsb
+    justify-content: space-between
+
+.container
+    width: 100%
+    height: 100%
+    max-width: var(--container)
+    padding: 0 20px
+    margin: auto
+
+.header
+    height: 200px
+    .container
+        background: url(../img/header__img.jpg) no-repeat 100% 50%
+        display: flex
+        align-items: center
+
+.nav
+    height: 52px
+    color: #fff
+    font-weight: 600
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0 24px
+    &__lang
+        font-weight: 400
+
+.content
+    background: url(../img/main__bg.jpg) repeat-y 50% 0
+    background-size: 100% auto
+    &__inner
+        background: var(--main__blend)
+        padding: 0 0 30px 0
+    h2
+        font-size: 28px
+        font-weight: 400
+        text-align: center
+        padding: 15px 0
+        margin: 0
+
+.banner
+    background: #fff
+    padding: 24px
+    img
+        width: 100%
+        height: auto
+
+.schedule
+    &__item
+        max-width: 830px
+        padding: 0 24px 24px 24px
+        margin: 0 auto 30px auto
+        position: relative
+        &:last-child
+            margin: 0 auto
+        &::after
+            content: ''
+            width: 100%
+            height: calc(100% - 40px)
+            border: 6px solid var(--main)
+            position: absolute
+            top: 20px
+            left: 0
+            pointer-events: none
+    &__title
+        font-size: 28px
+        font-weight: 600
+        text-align: center
+        line-height: 42px
+        background: var(--main)
+        margin: 0 0 6px 0
+        position: relative
+        z-index: 1
+    &__subtitle
+        font-size: 24px
+        color: #fff
+        text-align: center
+        line-height: 44px
+        text-transform: uppercase
+        background: var(--main__dark)
+        margin: 0 0 6px 0
+
+.subitem
+    &__item
+        display: flex
+        border: 2px solid var(--main__dark)
+        margin: 0 0 6px 0
+    &__info
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        align-items: flex-start
+    &__time
+        font-size: 24px
+        font-weight: 600
+        line-height: 34px
+        background: var(--main)
+        padding: 0 20px
+        margin: 0 0 8px 0
+    &__title
+        font-size: 24px
+        font-weight: 600
+        line-height: 24px
+        padding: 0 0 0 40px
+        margin: 0 0 8px 0
+    &__duration
+        font-size: 18px
+        padding: 0 0 0 40px
+    &__img
+        height: 134px
+        flex: 0 0 134px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.menu-btn
+    width: 18px
+    height: 24px
+    display: block
+    position: relative
+    z-index: 9
+    cursor: pointer
+    &__item
+        width: 100%
+        height: 2px
+        background: var(--main)
+        position: absolute
+        transition: 0.4s
+    &__item:first-child 
+        top: 4px
+        .active &
+            transform: translateY(6px) rotate(45deg)
+    &__item:nth-child(2)
+        top: 10px
+        .active &
+            opacity: 0
+    &__item:last-child
+        top: 16px
+        .active &
+            transform: translateY(-6px) rotate(-45deg)
+
+.menu-btn
+    display: none
+
+/* Modal */
+
+.modal
+    width: 100%
+    height: 100%
+    display: flex
+    display: none
+    align-items: center
+    justify-content: center
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9
+    &__content
+        width: 100%
+        max-width: var(--container)
+        position: relative
+        z-index: 1
+        animation: flowIn 0.6s forwards
+        &--cookie
+            background: #fff
+            padding: 30px
+    &__header
+        color: var(--gray)
+        display: flex
+        align-items: center
+        border-bottom: 1px solid var(--stroke)
+        padding: 0 0 30px 0
+        margin: 0 0 30px 0
+    &__title
+        font-size: 18px
+        color: var(--text)
+        font-weight: 600
+        margin: 0 10px 0 0
+    &__text
+        color: var(--gray)
+        line-height: 20px
+        a
+            text-decoration: underline
+    &__languages
+        margin: 0 0 0 auto
+        a
+            margin: 0 10px
+    &__foter
+        border-top: 1px solid var(--stroke)
+        display: flex
+        justify-content: flex-end
+        padding: 24px 0 0 0
+        margin: 10px 0 0 0
+        .learn-more
+            margin: 0 0 0 20px
+    &__hint
+        color: var(--gray)
+        margin: 30px 0
+    &__close
+        width: 32px
+        height: 32px
+        background: url(../img/close.svg) no-repeat 50%
+        background-size: contain
+        cursor: pointer
+        position: absolute
+        top: 30px
+        right: 30px
+        z-index: 1
+    &__blur
+        width: 100%
+        height: 100%
+        background: #ffffffbf
+        position: absolute
+        z-index: 0
+        cursor: crosshair
+        backdrop-filter: blur(10px)
+        -webkit-backdrop-filter: blur(10px)
+    &.active
+        display: flex
+    &--side
+        width: 50%
+        background: #ffffffbf
+        padding: 0 100px
+        left: 50%
+
+/* input */
+
+.checkbox
+    font-weight: 600
+    line-height: 24px
+    text-decoration: underline
+    display: flex
+    align-items: center
+    margin: 0 0 24px 0
+    cursor: pointer
+    input
+        width: 24px
+        height: 24px
+        border: 1px solid var(--text)
+        border-radius: 0
+        margin: 0 24px 0 0
+        appearance: none
+        -webkit-appearance: none
+        &:checked
+            background: url(../img/check.svg) no-repeat 50%
+
+@keyframes flowIn
+    0%
+        opacity: 0
+        transform: scale(0.5)
+    100%
+        opacity: 1
+        transform: scale(1)
+
+.result
+    &__item
+        font-size: 16px
+        border-bottom: 1px solid var(--stroke)
+        padding: 0 0 30px 0
+        margin: 0 0 30px 0
+    &__title
+        font-weight: 600
+        margin: 0 0 15px 0
+    &__description
+        color: var(--gray)
+        margin: 0 0 15px 0
+        span
+            color: var(--text)
+            background: var(--yellow)
+    &__link
+        color: var(--gray)
+        font-style: italic
+        text-decoration: underline
+
+.success
+    text-align: center
+    &__img
+        margin: 0 0 20px 0
+    &__title
+        font-size: 20px
+        font-weight: 600
+        margin: 0 0 10px 0
+    &__description
+        color: var(--gray)
+        margin: 0 0 60px 0
+    .learn-more
+        text-align: left
+        margin: 0 auto
+
+.error-page
+    margin: -100px 0 0 0
+    .container
+        height: 400px
+        background: url(../img/404.svg) no-repeat 50%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+    &__title
+        font-size: 20px
+        font-weight: 600
+        margin: 0 0 40px 0
+
+/* datepicker */
+
+.datepicker-here
+    color: var(--gray)
+    line-height: 52px
+    border: 1px solid var(--stroke)
+    padding: 0 64px 0 24px
+    margin: 0
+    position: relative
+    cursor: pointer
+.datepicker
+    &__content
+        display: flex
+        margin: 0 0 40px 0
+    &__icon
+        width: 60px
+        background: url(../img/calendar--min.svg) no-repeat 50%
+        border: 1px solid var(--stroke)
+        margin: 0 0 0 -60px
+        position: relative
+        pointer-events: none
+
+.only-xs
+    display: none
+
+@media (max-width: 1170px) and (min-width: 900px)
+    body
+        zoom: 0.8
+
+@media (max-width: 900px) and (min-width: 768px)
+    body
+        zoom: 0.6
+
+@media screen and (max-width: 768px)
+    body
+        &.unscroll
+            padding: 0
+
+    .only-xs
+        display: block
+    .only-md
+        display: none
+
+    .row
+        flex-wrap: wrap
+    .d-flex
+        flex-wrap: wrap
+    [class^=col]
+        width: 100%
+
+    .header
+        height: 100px
+        &__logo
+            img
+                max-width: 100%
+
+    .nav
+        display: none
+
+    .common
+        &-title
+            height: 80px
+            font-size: 24px
+            padding: 1% 0 0 1px
+    .isolated
+        padding: 40px 0
+
+    .schedule
+        &__item
+            &::after
+                width: calc(100% - 30px)
+                left: 10px
+        &__title
+            font-size: 24px
+
+    .subitem
+        &__item
+            flex-wrap: wrap
+        &__info
+            margin: 0 0 10px 0
+        &__img
+            width: 100%
+            height: 200px
+            flex: 0 0 100%
+
+    footer
+        padding: 40px 0
+        margin: 40px 0 0 0
+
+    .footer
+        &__first-row
+            flex-wrap: wrap
+        &__logo
+            margin: 0 0 20px 0
+        &__middle
+            flex-wrap: wrap
+        &__row
+            flex: 0 0 100%
+            padding: 40px 0 0 0
+            &.sep
+                display: none
+            &:last-child
+                display: flex
+        &__title
+            &:last-child
+                margin: 0
+        &__copyright
+            flex-direction: column-reverse
+        &__privacy-link
+            margin: 0 20px 20px 0
+        &__title-y
+            font-size: 18px
+        &__description
+            font-size: 18px
+
+    .modal
+        &__content
+            height: 100vh
+            overflow: auto
+        &__header
+            flex-direction: column
+        &__languages
+            margin: 20px auto 0 auto
+        &__foter
+            flex-direction: column
+            .learn-more
+                margin: 0 0 20px 0
+
+    .cookie
+        width: 100%
+        left: 0
+        bottom: 0
